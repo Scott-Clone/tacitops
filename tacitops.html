@@ -12,7 +12,7 @@
     :root {
       --bg: #080808;
       --fg: #f0ece4;
-      --muted: #8a8580;
+      --muted: #5a5650;
       --accent: #c8a96e;
       --grid: rgba(255,255,255,0.028);
     }
@@ -334,79 +334,11 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── HAMBURGER ── */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      width: 28px;
-      height: 20px;
-      position: relative;
-      z-index: 200;
-    }
-
-    .menu-toggle span {
-      display: block;
-      width: 100%;
-      height: 1.5px;
-      background: var(--fg);
-      position: absolute;
-      left: 0;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-
-    .menu-toggle span:nth-child(1) { top: 0; }
-    .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-    .menu-toggle span:nth-child(3) { bottom: 0; }
-
-    .menu-toggle.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
-    .menu-toggle.active span:nth-child(2) { opacity: 0; }
-    .menu-toggle.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 24px 24px; }
-      .menu-toggle { display: block; }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 28px;
-        position: fixed;
-        top: 0;
-        right: 0;
-        padding: 80px 24px 40px;
-        width: 100%;
-        height: 100vh;
-        background: rgba(8, 8, 8, 0.97);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        z-index: 100;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links li {
-        list-style: none;
-        text-align: center;
-      }
-
-      .nav-links a {
-        font-size: 1rem;
-        letter-spacing: 0.22em;
-        color: var(--fg);
-      }
-
-      .hero { padding: 80px 20px 48px; min-height: auto; }
-      .headline { font-size: clamp(1.8rem, 8vw, 3rem); max-width: 100%; word-break: break-word; }
-      .eyebrow { font-size: 0.55rem; margin-bottom: 24px; }
-      .sub { font-size: 0.7rem; margin-top: 24px; }
-      .cta-row { margin-top: 32px; flex-direction: column; gap: 16px; }
-      .btn-primary { text-align: center; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 24px 60px; }
       .pillars { grid-template-columns: 1fr; }
       .pillar { padding: 48px 24px; }
       .sectors { padding: 60px 24px; }
@@ -420,9 +352,6 @@
   <!-- NAV -->
   <nav>
     <a class="logo" href="#">Tacit<span>Ops</span>.ai</a>
-    <button class="menu-toggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
     <ul class="nav-links">
       <!-- <li><a href="#">Platform</a></li> -->
       <li><a href="#industries">Industries</a></li>
@@ -431,33 +360,18 @@
     </ul>
   </nav>
 
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        navLinks.classList.remove('open');
-      });
-    });
-  </script>
-
   <!-- HERO -->
   <section class="hero">
     <p class="eyebrow">Industrial Intelligence Platform</p>
     <h1 class="headline">Operational Knowledge,<br /><em>Unified.</em></h1>
     <p class="sub">
       TacitOps synthesizes knowledge across every system, document,
-      and data source in your operation — delivering it to every
-      technician, at every asset, in&nbsp;real&nbsp;time.
+      and data source in your operation — and delivers it to every
+      technician, at every asset, in real time.
     </p>
     <div class="cta-row">
       <a class="btn-primary" href="https://calendly.com/carlone-tacitops/30min" target="_blank">Explore Pilot Program</a>
-      <!-- <a class="btn-ghost" href="#">Learn more →</a> -->
+      <a class="btn-ghost" href="#">Learn more →</a>
     </div>
   </section>
 
@@ -516,5 +430,5 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 TacitOps AI Inc. All rights reserved.</p>
+    <p>© 2026 TacitOps AI. All rights reserved.</p>
     <a href="/cdn-cgi/l/email-protection#68000d040407281c090b011c07181b460901"><span class
