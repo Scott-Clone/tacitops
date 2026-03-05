@@ -59,6 +59,9 @@
       padding: 28px 48px;
       z-index: 100;
       animation: fadeDown 1s ease 0.2s both;
+      background: rgba(8, 8, 8, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     .logo {
@@ -350,10 +353,10 @@
   <nav>
     <a class="logo" href="#">Tacit<span>Ops</span>.ai</a>
     <ul class="nav-links">
-      <li><a href="#">Platform</a></li>
-      <li><a href="#">Industries</a></li>
-      <li><a href="#">Research</a></li>
-      <li><a href="#">Contact</a></li>
+      <!-- <li><a href="#">Platform</a></li> -->
+      <li><a href="#industries">Industries</a></li>
+      <!-- <li><a href="#">Research</a></li> -->
+      <li><a href="https://calendly.com/carlone-tacitops/30min" target="_blank">Contact</a></li>
     </ul>
   </nav>
 
@@ -367,7 +370,7 @@
       technician, at every asset, in real time.
     </p>
     <div class="cta-row">
-      <a class="btn-primary" href="#">Request Access</a>
+      <a class="btn-primary" href="https://calendly.com/carlone-tacitops/30min" target="_blank">Explore Pilot Program</a>
       <a class="btn-ghost" href="#">Learn more →</a>
     </div>
   </section>
@@ -416,7 +419,7 @@
   </section>
 
   <!-- SECTOR TAGS -->
-  <div class="sectors">
+  <div id="industries" class="sectors">
     <div class="tag">Mining</div>
     <div class="tag">Oil &amp; Gas</div>
     <div class="tag">Heavy Manufacturing</div>
