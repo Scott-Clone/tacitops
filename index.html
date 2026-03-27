@@ -297,6 +297,107 @@
 
     .tag:hover { border-color: var(--accent); color: var(--accent); }
 
+    /* ── CONTACT ── */
+    .contact {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 100px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .contact .contact-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .contact-form {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--bg);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--fg);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+
+    .contact-form input:-webkit-autofill,
+    .contact-form input:-webkit-autofill:hover,
+    .contact-form input:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 1000px var(--bg) inset;
+      -webkit-text-fill-color: var(--fg);
+      caret-color: var(--fg);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      align-self: flex-start;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .form-success h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--fg);
+      margin-bottom: 12px;
+    }
+
+    .form-success p {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
     /* ── FOOTER ── */
     footer {
       position: relative;
@@ -413,6 +514,7 @@
       .sectors { padding: 60px 24px; }
       footer { flex-direction: column; gap: 12px; text-align: center; }
       .statement { padding: 80px 24px; }
+      .contact { padding: 60px 24px; }
     }
   </style>
 </head>
@@ -426,7 +528,7 @@
     </button>
     <ul class="nav-links">
       <li><a href="#industries">Industries</a></li>
-      <li><a href="https://calendly.com/carlone-tacitops/30min" target="_blank">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -450,12 +552,12 @@
     <p class="eyebrow">Industrial Intelligence Infrastructure</p>
     <h1 class="headline">Operational Knowledge,<br /><em>Unified.</em></h1>
     <p class="sub">
-      We built the AI guidance layer for heavy industry that delivers 
+      We are building the AI guidance layer for heavy industry that delivers 
       expert-level procedural knowledge to any technician, at any asset, 
       in&nbsp;real&nbsp;time.
     </p>
     <div class="cta-row">
-      <a class="btn-primary" href="https://calendly.com/carlone-tacitops/30min" target="_blank">Explore Pilot Program</a>
+      <a class="btn-primary" href="#contact">Explore Pilot Program</a>
     </div>
   </section>
 
@@ -509,6 +611,24 @@
     <div class="tag">Industrial Maintenance</div>
     <div class="tag">Asset-Intensive Operations</div>
   </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <p class="contact-sub">Tell us about your operation and we'll reach out to discuss a pilot.</p>
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="8a06c62e-dbfe-41f9-8833-875acddede7e">
+      <input type="hidden" name="redirect" value="https://tacitops.ai">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Tell us about your operation..." required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+    <div class="form-success">
+      <h3>Message Sent</h3>
+      <p>We'll be in touch shortly.</p>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
