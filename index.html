@@ -616,19 +616,39 @@
   <section id="contact" class="contact">
     <h2>Get in Touch</h2>
     <p class="contact-sub">Tell us about your operation and we'll reach out to discuss a pilot.</p>
-    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="8a06c62e-dbfe-41f9-8833-875acddede7e">
-      <input type="hidden" name="redirect" value="https://tacitops.ai">
       <input type="text" name="name" placeholder="Name" required>
       <input type="email" name="email" placeholder="Email" required>
       <textarea name="message" placeholder="Tell us about your operation..." required></textarea>
       <button type="submit" class="btn-primary">Send Message</button>
     </form>
-    <div class="form-success">
+    <div class="form-success" id="formSuccess">
       <h3>Message Sent</h3>
       <p>We'll be in touch shortly.</p>
     </div>
   </section>
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      }).then(function(res) {
+        return res.json();
+      }).then(function(data) {
+        if (data.success) {
+          contactForm.style.display = 'none';
+          formSuccess.style.display = 'block';
+          contactForm.reset();
+        }
+      });
+    });
+  </script>
 
   <!-- FOOTER -->
   <footer>
